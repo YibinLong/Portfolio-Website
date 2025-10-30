@@ -25,7 +25,7 @@ const posts = (await getCollection('blog')).sort(
 				
 				I believe that AI will <a href="https://a16z.com/why-software-is-eating-the-world/" target="_blank">eat the world</a>.<br>
 				
-				It's a mistake to take it any less seriously.
+				It's a mistake to take it any less seriously. 
 			</p>
 			<p>
 				I live in Canada now, and I was on the East Coast for most of my life before that. Outside of tech, you'll probably find me working out, grappling, or at a board game cafe. I'm a big fan of Lanzhou hand-pulled noodles and classic smashburgers.
@@ -35,19 +35,16 @@ const posts = (await getCollection('blog')).sort(
 				Mostly software, occasionally life.
 			</p>
 			<p>
-				Recent posts:
+				Recent Posts:
 			</p>
 			<ul>
 				{posts.map((post) => (
 					<li>
-						<a href={`/blog/${post.slug || post.id}/`}>{post.data.title}</a>
+						<a href={`/blog/${post.id}/`}>{post.data.title}</a>
 						<span> — <FormattedDate date={post.data.pubDate} /></span>
 					</li>
 				))}
 			</ul>
-			<p>
-				View <a href="/blog/">archive</a> for more.
-			</p>
 		</main>
 	</body>
 </html>
