@@ -36,7 +36,7 @@ body {
 	padding: 0;
 	text-align: left;
 	/* Set a soft beige background for a minimalist look */
-	background: #f5f1e6;
+	background: #ffe4b560;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: rgb(var(--gray-dark));
