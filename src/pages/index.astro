@@ -16,12 +16,23 @@ const posts = (await getCollection('blog')).sort(
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<Header />
 		<main>
-			<h1>Yibin Long</h1>
 			<p>
-				I’m a software developer. This is a simple log of writings, notes, and links I find
-				interesting. Mostly programming, sometimes product, occasionally life.
+				Hey! My name is Yibin.
+			</p>
+			<p>
+				I'm an AI-First Engineer.<br>
+				
+				I believe that AI will <a href="https://a16z.com/why-software-is-eating-the-world/" target="_blank">eat the world</a>.<br>
+				
+				It's a mistake to take it any less seriously.
+			</p>
+			<p>
+				I live in Canada now, and I was on the East Coast for most of my life before that. Outside of tech, you'll probably find me working out, grappling, or at a board game cafe. I'm a big fan of Lanzhou hand-pulled noodles and classic smashburgers.
+			</p>
+			<p>
+				This is a simple log of my writings and notes.<br>
+				Mostly software, occasionally life.
 			</p>
 			<p>
 				Recent posts:
@@ -38,6 +49,5 @@ const posts = (await getCollection('blog')).sort(
 				View <a href="/blog/">archive</a> for more.
 			</p>
 		</main>
-		<Footer />
 	</body>
 </html>
