@@ -31,17 +31,17 @@
 	font-display: swap;
 }
 body {
-	font-family: "Atkinson", sans-serif;
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
 	margin: 0;
 	padding: 0;
 	text-align: left;
 	/* Set a soft beige background for a minimalist look */
-	background: #ffe4b560;
+	background: #ffe4b554;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: rgb(var(--gray-dark));
-	font-size: 20px;
-	line-height: 1.7;
+	font-size: 18px;
+	line-height: 1.8;
 }
 main {
 	width: 720px;
@@ -60,19 +60,19 @@ h6 {
 	line-height: 1.2;
 }
 h1 {
-	font-size: 3.052em;
+	font-size: 2.014em;
 }
 h2 {
-	font-size: 2.441em;
+	font-size: 1.612em;
 }
 h3 {
-	font-size: 1.953em;
+	font-size: 1.289em;
 }
 h4 {
-	font-size: 1.563em;
+	font-size: 1.032em;
 }
 h5 {
-	font-size: 1.25em;
+	font-size: 0.825em;
 }
 strong,
 b {
@@ -89,7 +89,7 @@ p {
 	margin-bottom: 1em;
 }
 .prose p {
-	margin-bottom: 2em;
+	margin-bottom: 0.75em;
 }
 textarea {
 	width: 100%;
@@ -110,10 +110,13 @@ code {
 	padding: 2px 5px;
 	background-color: rgb(var(--gray-light));
 	border-radius: 2px;
+	font-size: 0.8em;
 }
 pre {
 	padding: 1.5em;
 	border-radius: 8px;
+	font-size: 0.9em;
+	line-height: 1.5;
 }
 pre > code {
 	all: unset;
