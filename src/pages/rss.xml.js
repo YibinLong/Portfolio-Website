@@ -8,9 +8,13 @@ export async function GET(context) {
 		title: SITE_TITLE,
 		description: SITE_DESCRIPTION,
 		site: context.site,
-		items: posts.map((post) => ({
-			...post.data,
-			link: `/blog/${post.id}/`,
-		})),
+		items: posts.map((post) => {
+			// Strip date prefix from filename for cleaner URLs
+			const cleanSlug = post.id.replace(/^\d{4}-\d{2}-\d{2}-/, '');
+			return {
+				...post.data,
+				link: `/blog/${cleanSlug}/`,
+			};
+		}),
 	});
 }

@@ -5,9 +5,10 @@ import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
-const posts = (await getCollection('blog')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-).slice(0, 5);
+const posts = (await getCollection('blog'))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 5);
 ---
 
 <!doctype html>
@@ -28,7 +29,7 @@ const posts = (await getCollection('blog')).sort(
 				It's a mistake to take it any less seriously. 
 			</p>
 			<p>
-				I live in Canada now, and I was on the East Coast for most of my life before that. Outside of tech, you'll probably find me working out, grappling, or at a board game cafe. I'm a big fan of Lanzhou hand-pulled noodles and classic smashburgers.
+				I live in Canada now, and I was on the East Coast for most of my life before that. Outside of tech, you'll probably find me working out, grappling, or at a board game cafe. I'm a big fan of Lanzhou hand-pulled noodles and classic smashburgers!
 			</p>
 			<p>
 				This is a simple log of my writings and notes.<br>
@@ -38,12 +39,16 @@ const posts = (await getCollection('blog')).sort(
 				Recent Posts:
 			</p>
 			<ul>
-				{posts.map((post) => (
-					<li>
-						<a href={`/blog/${post.id}/`}>{post.data.title}</a>
-						<span> — <FormattedDate date={post.data.pubDate} /></span>
-					</li>
-				))}
+				{posts.map((post) => {
+					// Strip date prefix from filename for cleaner URLs
+					const cleanSlug = post.id.replace(/^\d{4}-\d{2}-\d{2}-/, '');
+					return (
+						<li>
+							<a href={`/blog/${cleanSlug}/`}>{post.data.title}</a>
+							<span> — <FormattedDate date={post.data.pubDate} /></span>
+						</li>
+					);
+				})}
 			</ul>
 		</main>
 	</body>

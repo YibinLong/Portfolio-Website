@@ -4,10 +4,15 @@ import BlogPost from '../../layouts/BlogPost.astro';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
-	return posts.map((post) => ({
-		params: { slug: post.id },
-		props: post,
-	}));
+	return posts.map((post) => {
+		// Strip date prefix from filename for cleaner URLs
+		// e.g., "2025-10-30-my-post" -> "my-post"
+		const cleanSlug = post.id.replace(/^\d{4}-\d{2}-\d{2}-/, '');
+		return {
+			params: { slug: cleanSlug },
+			props: post,
+		};
+	});
 }
 type Props = CollectionEntry<'blog'>;
 
