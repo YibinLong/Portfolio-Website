@@ -10,4 +10,9 @@ export default defineConfig({
 	site: 'https://yibinlong.com',
 	integrations: [mdx(), sitemap()],
 	adapter: netlify(),
+	markdown: {
+		shikiConfig: {
+			theme: 'github-light',
+		},
+	},
 });
