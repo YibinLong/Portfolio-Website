@@ -4,9 +4,9 @@ import BaseHead from '../../components/BaseHead.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const posts = (await getCollection('blog'))
+	.filter((post) => !post.data.draft)
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <!doctype html>
@@ -28,14 +28,18 @@ const posts = (await getCollection('blog')).sort(
 		<main>
 			<section>
                 <ul>
-                    {posts.map((post) => (
-                        <li>
-                            <a class="row" href={`/blog/${post.id}/`}>
-                                <span class="date"><FormattedDate date={post.data.pubDate} /></span>
-                                <span class="title">{post.data.title}</span>
-                            </a>
-                        </li>
-                    ))}
+                    {posts.map((post) => {
+						// Strip date prefix from filename for cleaner URLs
+						const cleanSlug = post.id.replace(/^\d{4}-\d{2}-\d{2}-/, '');
+						return (
+							<li>
+								<a class="row" href={`/blog/${cleanSlug}/`}>
+									<span class="date"><FormattedDate date={post.data.pubDate} /></span>
+									<span class="title">{post.data.title}</span>
+								</a>
+							</li>
+						);
+					})}
                 </ul>
 			</section>
 		</main>
