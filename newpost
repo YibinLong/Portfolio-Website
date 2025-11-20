@@ -1,0 +1,6 @@
+#!/bin/bash
+# Simple wrapper to create a new blog post
+# Usage: bash newpost "My New Post Title"
+
+node scripts/new-post.mjs "$@"
+
