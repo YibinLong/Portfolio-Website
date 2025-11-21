@@ -40,9 +40,9 @@ Here you should also define your functional requirements. What are must-haves? S
 
 What are some non-functional requirements? For example, how performant do you want your project to be?
 
-What are the techinical requirements? What are the dependencies that you must have, or the key assumptions?
+What are the technical requirements? What are the dependencies that you must have, or the key assumptions?
 
-Finally, what is out of scope? It's important to know what you won't need to develop to avoid scope creep.
+Finally, what's out of scope? It's important to know what you won't need to develop to avoid scope creep.
 
 Think of this as a version 0 of your Product Requirements Document (PRD). This one gets your thoughts down, but you'll heavily refine it into a full-fledged PRD later.
 
@@ -58,9 +58,9 @@ If you were given the requirements from your boss, make sure you ask lots of que
 
 I particularly like asking ChatGPT a question by starting with: Explain this SIMPLY. 
 
-I'm a huge fan of the <a href="https://en.wikipedia.org/wiki/Learning_by_teaching#Plastic_platypus_learning" target="_blank" rel="noopener noreferrer">Feynman Technique</a> of using anologies and simplifying complex subjects down to their essence. I feel this allows me to really understand topics I haven't even heard of minutes before.
+I'm a huge fan of the <a href="https://en.wikipedia.org/wiki/Learning_by_teaching#Plastic_platypus_learning" target="_blank" rel="noopener noreferrer">Feynman Technique</a> of using analogies and simplifying complex subjects down to their essence. I feel this allows me to really understand topics I hadn't even heard of minutes earlier.
 
-I'll do research here about what are the best practices for what I'm doing. Are there any common pitfalls I should watch out for? How would senior engineers from a world-class tech firm architecture my project?
+I'll do research here about what are the best practices for what I'm doing. Are there any common pitfalls I should watch out for? How would senior engineers from a world-class tech firm architect my project?
 
 <details>
 <summary>If you're interested, click here to see my system prompt for ChatGPT </summary>
@@ -93,7 +93,7 @@ I like to ask Perplexity Research and ChatGPT with Web Search to come up with a 
 
 Usually, each LLM will come up with slightly different answers. Here, I pit them against each other. I'll ask one LLM whether another LLM's suggestion works better than the one it suggested. I'll do this for each framework suggested, until I come up with an optimized tech stack.
 
-I'll finish up by pasted this optimized tech stack into new chats, to verify that every framework is still compatible with each other.
+I'll finish up by pasting this optimized tech stack into new chats, to verify that every framework is still compatible with each other.
 
 ---
 
@@ -144,8 +144,8 @@ I have a master prompt to generate the PRD that I found worked well. I iterated 
 Modify this prompt so that:
 
 - You fill in any project context that is asked by the prompt
-- The tech stack matches your chosen stack
-- The requirements reflect your project
+- You ensure the tech stack matches your chosen stack
+- Youse ensure the requirements reflect your project
 
 <details>
 <summary>Click here to see my master prompt for the PRD! </summary>
@@ -306,7 +306,7 @@ This PRD becomes the full specification for your entire project.
 
 **Finally**, we get to move onto Cursor and/or Claude Code now!
 
-You'll note that I like to frontload my work. I noticed I'll spend much less time debugging and I have a much better grasp on my codebaes if I spend relatively more time planning before I jump into coding.
+You'll note that I like to frontload my work. I noticed I spend much less time debugging and I have a much better grasp on my codebase if I spend relatively more time planning before I jump into coding.
 
 NOTE: I like to ask ChatGPT to generate the PRD instead of doing it inside Cursor because it seems that system prompt in Cursor makes it so that the LLM likes to output a lot of code chunks inside the PRD. This will easily create PRDs that are 1000 to 2000 lines long, blowing up the context of new chats. ChatGPT will output more succinct PRDs that only focus on the key details, and let Cursor or Claude Code figure out the future code implementation.
 
@@ -316,7 +316,7 @@ NOTE: I like to ask ChatGPT to generate the PRD instead of doing it inside Curso
 
 Open your preferred coding tool.
 
-I use both Cursor and Claude Code. I open up the Cursor IDE, and have two terminals of Claude Code open: one with Sonnet 4.5 Thinking, and one with GLM 4.6. I also have OpenAI's Codex VSCode extension open as well. That's four different LLMs! I like the variety, because I noticed different LLMs in different environments tend to be better at different tasks. I'll expand on this more in another post.
+I use both Cursor and Claude Code. I open up the Cursor IDE, and have two terminals of Claude Code open: one with Sonnet 4.5 Thinking, and one with GLM 4.6. I also have OpenAI's Codex VSCode extension open as well. That's four different LLMs! I like the variety, because I noticed different LLMs in different environments tend to be better at different tasks. I'll expand on this in another post.
 
 Paste in the initial requirements document and the PRD you just created into the repo.
 
@@ -375,7 +375,7 @@ Lets first plan how to complete these tasks!
 
 Answer any questions that the LLM asks of you. When the plan is ready, simply tell it to go implement!
 
-When the implementation is done, I like to QA all tasks that the agent finished. I noticed that simply relying on unit tests can let huge bugs slip through. If the bug is more complex, ask the LLM to first plan a fix, and then implement it. For the truly big bugs, ask GPT-5.1-Codex-High to plan, and then implement a fix. I'll share by debugging workflow in a future post!
+When the implementation is done, I like to QA all tasks that the agent finished. I noticed that simply relying on unit tests can let huge bugs slip through. If the bug is more complex, ask the LLM to first plan a fix, and then implement it. For the truly big bugs, ask GPT-5.1-Codex-High to plan, and then implement a fix. I'll share my debugging workflow in a future post!
 
 Finally, after everything is done, I like to use an LLM to help create commit messages that follow Conventional Commit standards and helpful pull request descriptions.
 
