@@ -370,7 +370,7 @@ Do NOT create any extra .md files when you're done.
 Give the EXACT way to test.
 Make sure you check off the TASK_LIST.md when you're done.
 Ask me any questions about tasks you're unsure about.
-Lets first plan how to complete these tasks!
+Lets first switch to plan mode and plan how to complete these tasks!
 ```
 
 Answer any questions that the LLM asks of you. When the plan is ready, simply tell it to go implement!
