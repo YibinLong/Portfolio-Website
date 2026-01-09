@@ -1,6 +1,6 @@
 ---
 title: 'AI as a Baseline Expectation'
-description: 'Lorem ipsum dolor sit amet'
+description: 'Reflections on AI usage becoming a core expectation in tech, inspired by Shopify CEO Tobi Lütke'
 pubDate: 'Oct 30 2025'
 draft: false
 ---
