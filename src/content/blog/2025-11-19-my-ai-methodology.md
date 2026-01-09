@@ -386,12 +386,13 @@ Here is my prompt, simply replace the story name with the one you're completing:
 ```text
 We just finished Story 1.1: Initialize Electron Project from @TASK_LIST.md.
 I have GitHub CLI installed already.
-I want you to write me commands I can just copy and paste into my terminal for these tasks. 
+I want you to write me commands I can just copy and paste into my terminal for these tasks.
+We are on the main branch, so create a feature branch off of main and switch to it, bringing all the uncommitted changes to that new feature branch.
 CHECK the modified files so you actually know which files we need to commit.
 CHAIN all of the commands together, so I only need to copy and paste it into my terminal ONCE:
 Create separate commits for each logical change (e.g., feature, fix, refactor, etc) using Conventional Commit format.
 Then, add a clear title and description to the pull request and push it to GitHub.
-Use gh pr create end the command with “--base main”
+Use gh pr create and end the command with “--base main”
 NOTE: DO NOT RUN THE COMMANDS - I WANT TO RUN THEM MYSELF
 ```
 
