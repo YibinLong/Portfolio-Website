@@ -2,7 +2,7 @@
 title: 'AI as a Baseline Expectation'
 description: 'Reflections on AI usage becoming a core expectation in tech, inspired by Shopify CEO Tobi Lütke'
 pubDate: 'Oct 30 2025'
-draft: false
+published: true
 ---
 
 I was inspired by this [tweet](https://x.com/tobi/status/1909231499448401946) from Tobi Lütke, CEO of Shopify, a few months back.

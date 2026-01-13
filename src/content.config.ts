@@ -13,8 +13,8 @@ const blog = defineCollection({
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional(),
 			heroImage: image().optional(),
-			// Marks a post as a draft so we can hide it in the UI
-			draft: z.boolean().optional(),
+			// If true, the post is published and visible on the site
+			published: z.boolean().optional(),
 		}),
 });
 

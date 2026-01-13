@@ -2,7 +2,7 @@
 title: 'My AI Methodology'
 description: 'My AI Methodology'
 pubDate: 'Nov 19 2025'
-draft: false
+published: true
 ---
 
 An AI Methodology is simply a systematic workflow of how a developer goes about using AI in their development process.

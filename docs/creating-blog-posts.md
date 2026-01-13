@@ -3,7 +3,7 @@
 This project uses Astro's content collections.  
 In simple terms: **every `.md` or `.mdx` file in `src/content/blog` becomes a blog post**.
 
-The homepage and `/blog` page automatically read from that folder, sort posts by date, and hide drafts.
+The homepage and `/blog` page automatically read from that folder, sort posts by date, and only show published posts.
 
 **File naming convention:**  
 Files are named with a date prefix: `YYYY-MM-DD-post-title.md` (e.g., `2025-11-19-my-post.md`)
@@ -31,7 +31,7 @@ This will use a default title like "New Post 1602" (with the current time), whic
 The command automatically:
 - Creates a file with today's date prefix: `2025-11-19-my-new-post-title.md`
 - Fills in frontmatter with title, pubDate, etc.
-- Sets `draft: false` so it immediately appears on your site
+- Sets `published: true` so it immediately appears on your site
 - Shows you the URL where it will be available
 
 Then just:
@@ -60,7 +60,7 @@ Copy this template into your new file:
 title: 'My New Post'
 description: 'Short one-line summary of what this post is about.'
 pubDate: 'Nov 19 2025'
-draft: false
+published: true
 ---
 
 Write your post content here in Markdown.
@@ -71,9 +71,9 @@ Write your post content here in Markdown.
 - **`title`**: Shown as the post's title in the UI.
 - **`description`**: Short summary; useful for SEO and lists.
 - **`pubDate`**: Date used to sort posts (newest first).
-- **`draft`**:
-  - `false` → post is **public** and shows on the homepage and `/blog`.
-  - `true` → post is a **draft**, hidden from the lists.
+- **`published`**:
+  - `true` → post is **public** and shows on the homepage and `/blog`.
+  - `false` → post is **hidden** from the lists.
 
 Anything after the `---` block is your actual content, written in normal Markdown.
 
@@ -85,7 +85,7 @@ On the homepage (`src/pages/index.astro`), Astro runs this code:
 
 ```ts
 const posts = (await getCollection('blog'))
-  .filter((post) => !post.data.draft)
+  .filter((post) => post.data.published)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 5);
 ```
@@ -93,14 +93,14 @@ const posts = (await getCollection('blog'))
 In plain language:
 
 - **`getCollection('blog')`**: Load all posts from `src/content/blog`.
-- **`.filter((post) => !post.data.draft)`**: Keep only posts that are **not** drafts.
+- **`.filter((post) => post.data.published)`**: Keep only posts that are **published**.
 - **`.sort(...)`**: Order posts so **newest `pubDate` comes first**.
 - **`.slice(0, 5)`**: Show only the **5 most recent** posts.
 
-So, to make sure your new post appears under **“Recent Posts”**:
+So, to make sure your new post appears under **"Recent Posts"**:
 
 1. Put the `.md` file in `src/content/blog` with the date prefix format: `YYYY-MM-DD-title.md`
-2. Do **not** set `draft: true` (either remove the line or set `draft: false`).
+2. Set `published: true` to make the post visible.
 3. Give it a `pubDate` that is recent enough to be in the newest 5 posts.
 
 You do **not** need to touch any Astro components or TypeScript files for it to show up.

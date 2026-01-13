@@ -80,7 +80,7 @@ const content = `---
 title: '${title}'
 description: 'Short one-line summary of what this post is about.'
 pubDate: '${pubDate}'
-draft: false
+published: true
 ---
 
 Write your post content here in Markdown.
@@ -94,5 +94,5 @@ console.log(`✅ New blog post created: ${filename}`);
 console.log(`📂 Location: ${filePath}`);
 console.log(`🌐 URL will be: /blog/${slug}/`);
 console.log('');
-console.log('The post will appear on the homepage and /blog because draft is set to false.');
+console.log('The post will appear on the homepage and /blog because published is set to true.');
 console.log('The date prefix in the filename helps sort your posts chronologically in your editor!');
